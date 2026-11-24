@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
-import { Book, Play, ArrowLeft, Lightbulb, SplitSquareVertical, Zap, CheckCircle2, XCircle, Sparkles } from 'lucide-react';
+import { Book, Play, ArrowLeft, Lightbulb, SplitSquareVertical, CheckCircle2, XCircle, Trophy, Eye, RotateCcw } from 'lucide-react';
 import { chapters } from './data/chapters';
 import { quizzes } from './data/quiz';
 import './index.css';
@@ -186,19 +186,22 @@ const Confetti: React.FC = () => {
 const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, onBack }) => {
   const questions = quizzes[quizId];
   const [currentIdx, setCurrentIdx] = useState(0);
-  const [score, setScore] = useState(0);
-  const [streak, setStreak] = useState(0);
+  const [correctCount, setCorrectCount] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
   const [showHint, setShowHint] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [pointsEarned, setPointsEarned] = useState<number | null>(null);
+  const [showReview, setShowReview] = useState(false);
+  const [answers, setAnswers] = useState<Record<number, number>>({});
   
   // Lifelines
   const [used5050, setUsed5050] = useState(false);
-  const [usedHint, setUsedHint] = useState(false);
   const [hiddenOptions, setHiddenOptions] = useState<number[]>([]);
+
+  useEffect(() => {
+    document.querySelector<HTMLElement>('.app-main')?.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [currentIdx, isFinished]);
 
   if (!questions || questions.length === 0) {
     return <div>Quiz không tồn tại!</div>;
@@ -210,19 +213,14 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
     if (answered) return; // Prevent multiple clicks
     setSelectedOption(index);
     setAnswered(true);
+    setAnswers(previous => ({ ...previous, [currentIdx]: index }));
 
     const isCorrect = index === question.correctAnswerIndex;
     if (isCorrect) {
-      // Base score 10, streak bonus 10% (1 point) per streak count
-      const points = 10 + Math.floor(10 * 0.1 * streak);
-      setScore(s => s + points);
-      setStreak(s => s + 1);
-      setPointsEarned(points);
+      setCorrectCount(count => count + 1);
       setShowConfetti(true);
       playSuccessSound();
     } else {
-      setStreak(0);
-      setPointsEarned(null);
       setShowConfetti(false);
     }
   };
@@ -235,7 +233,6 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
       setHiddenOptions([]);
       setShowHint(false);
       setShowConfetti(false);
-      setPointsEarned(null);
     } else {
       setIsFinished(true);
     }
@@ -253,18 +250,93 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
   };
 
   const handleHint = () => {
-    if (usedHint || answered) return;
-    setUsedHint(true);
+    if (showHint || answered) return;
     setShowHint(true);
   };
 
+  const handleRetry = () => {
+    setCurrentIdx(0);
+    setCorrectCount(0);
+    setIsFinished(false);
+    setSelectedOption(null);
+    setAnswered(false);
+    setShowHint(false);
+    setShowConfetti(false);
+    setShowReview(false);
+    setAnswers({});
+    setUsed5050(false);
+    setHiddenOptions([]);
+  };
+
   if (isFinished) {
+    const accuracy = Math.round((correctCount / questions.length) * 100);
+    const isExcellent = accuracy >= 90;
+
     return (
-      <div className="glass-card quiz-result fade-in">
-        <h2>Hoàn thành!</h2>
-        <p style={{ fontSize: '1.2rem', marginBottom: '1rem' }}>Điểm của bạn: <strong>{score}</strong></p>
-        <p style={{ color: 'var(--text-secondary)' }}>Bạn đã trả lời hết {questions.length} câu hỏi.</p>
-        <button className="btn-primary" onClick={onBack}>Trở về danh sách</button>
+      <div className="quiz-result-shell fade-in">
+        <div className={`glass-card quiz-result ${isExcellent ? 'result-excellent' : 'result-review-needed'}`}>
+          {isExcellent && <Confetti />}
+
+          <div className="result-trophy" aria-hidden="true">
+            <Trophy size={42} strokeWidth={2.2} />
+          </div>
+
+          <div className="result-badge">
+            {isExcellent ? '🏆 HOÀN THÀNH XUẤT SẮC' : '💡 CẦN ÔN TẬP THÊM'}
+          </div>
+
+          <div className="result-correct-count">
+            {correctCount} / {questions.length} CÂU ĐÚNG
+          </div>
+          <div className="result-accuracy">Đạt độ chính xác {accuracy}%</div>
+
+          <p className="result-message">
+            {isExcellent
+              ? 'Chúc mừng bạn! Hãy tiếp tục ôn tập và suy ngẫm để hiểu Pháp ngày càng sâu hơn. Mong nguyện những lời Pháp bạn đã được học sẽ thấm nhuần vào tâm để trong từng bước chân, từng hơi thở, từng cái nhìn, từng bữa ăn và bất kỳ hành động nào của mình, bạn đều cảm nhận được Pháp trong khung cảnh đó.'
+              : 'Nhiều câu hỏi cần sự suy ngẫm và tư duy. Bạn hãy tiếp tục ôn tập kỹ hơn, nghe lại bài giảng, đọc lại Tập 1 và tài liệu, xem phần giải thích những nội dung chưa rõ để hiểu Pháp ngày càng sâu hơn.'}
+          </p>
+
+          <div className="result-actions">
+            <button className="result-action-btn" onClick={() => setShowReview(value => !value)}>
+              <Eye size={21} />
+              {showReview ? 'Ẩn phần xem lại' : 'Xem lại toàn bộ câu hỏi & đáp án'}
+            </button>
+            <button className="result-action-btn" onClick={handleRetry}>
+              <RotateCcw size={21} /> Làm lại Quiz
+            </button>
+            <button className="result-back-btn" onClick={onBack}>
+              <ArrowLeft size={18} /> Trở về danh sách
+            </button>
+          </div>
+        </div>
+
+        {showReview && (
+          <div className="quiz-review fade-in">
+            <h2>Xem lại câu hỏi & đáp án</h2>
+            {questions.map((reviewQuestion, index) => {
+              const selectedAnswer = answers[index];
+              const isCorrect = selectedAnswer === reviewQuestion.correctAnswerIndex;
+
+              return (
+                <article key={index} className={`glass-card review-item ${isCorrect ? 'review-correct' : 'review-incorrect'}`}>
+                  <div className="review-heading">
+                    {isCorrect
+                      ? <CheckCircle2 size={22} color="var(--success)" />
+                      : <XCircle size={22} color="var(--danger)" />}
+                    <h3>Câu {index + 1}: {reviewQuestion.text}</h3>
+                  </div>
+                  <p>
+                    <strong>Bạn đã chọn:</strong>{' '}
+                    {selectedAnswer === undefined ? 'Chưa trả lời' : reviewQuestion.options[selectedAnswer]}
+                  </p>
+                  <p><strong>Đáp án đúng:</strong> {reviewQuestion.options[reviewQuestion.correctAnswerIndex]}</p>
+                  <p><strong>Giải thích:</strong> {reviewQuestion.explanation}</p>
+                  {reviewQuestion.memory && <p><strong>Ghi nhớ:</strong> {reviewQuestion.memory}</p>}
+                </article>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }
@@ -278,18 +350,10 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
       <div className="glass-card" style={{ maxWidth: '800px', margin: '0 auto', position: 'relative', overflow: 'hidden' }}>
         {showConfetti && <Confetti />}
 
-        {pointsEarned !== null && (
-          <div className="score-float-badge">
-            <Sparkles size={16} fill="#fde047" stroke="#fde047" />
-            +{pointsEarned} điểm!
-            {streak > 1 && <span> • Chuỗi x{streak}</span>}
-          </div>
-        )}
-
         <div className="game-header">
-          <div className="score-board">Điểm: {score}</div>
-          <div className={`streak-board ${pointsEarned !== null ? 'streak-glow' : ''}`}>
-            <Zap size={20} fill="var(--warning)" /> Chuỗi: x{streak} (+{streak * 10}%)
+          <div className="correct-count-board">
+            <CheckCircle2 size={20} />
+            Số câu đúng: <strong>{correctCount} / {questions.length}</strong>
           </div>
         </div>
 
@@ -297,13 +361,18 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
           <button className="lifeline-btn" onClick={handle5050} disabled={used5050}>
             <SplitSquareVertical size={16} /> 50:50
           </button>
-          <button className="lifeline-btn" onClick={handleHint} disabled={usedHint}>
-            <Lightbulb size={16} /> Gợi ý
+          <button className="lifeline-btn" onClick={handleHint} disabled={showHint || answered}>
+            <Lightbulb size={16} /> {showHint ? 'Đã xem gợi ý' : 'Gợi ý'}
           </button>
         </div>
 
-        <div style={{ textAlign: 'center', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
-          Câu {currentIdx + 1} / {questions.length}
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '0.65rem', marginBottom: '1rem', color: 'var(--text-secondary)' }}>
+          <span>Câu {currentIdx + 1} / {questions.length}</span>
+          {question.difficulty && (
+            <span style={{ padding: '0.25rem 0.65rem', borderRadius: '999px', color: 'var(--primary)', background: 'var(--primary-soft)', border: '1px solid var(--primary)', fontSize: '0.82rem', fontWeight: 700 }}>
+              Mức độ: {question.difficulty}
+            </span>
+          )}
         </div>
 
         <h2 className="question-text">{question.text}</h2>
@@ -354,7 +423,7 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
             style={{ 
               marginTop: '1.5rem', 
               padding: '1.25rem', 
-              background: selectedOption === question.correctAnswerIndex ? 'rgba(21, 128, 61, 0.08)' : 'rgba(185, 28, 28, 0.06)', 
+              background: selectedOption === question.correctAnswerIndex ? 'var(--success-bg)' : 'var(--danger-bg)',
               borderRadius: '0.85rem', 
               border: `1.5px solid ${selectedOption === question.correctAnswerIndex ? 'var(--success)' : 'var(--danger)'}` 
             }}
@@ -379,6 +448,11 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
             <p style={{ marginBottom: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
               <strong style={{ color: 'var(--text-primary)' }}>Giải thích:</strong> {question.explanation}
             </p>
+            {question.memory && (
+              <p style={{ marginBottom: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                <strong style={{ color: 'var(--text-primary)' }}>Ghi nhớ:</strong> {question.memory}
+              </p>
+            )}
             <button className="btn-primary" onClick={handleNext} style={{ width: '100%', marginTop: 0 }}>
               {currentIdx + 1 < questions.length ? 'Tiếp tục câu hỏi' : 'Xem kết quả'}
             </button>
@@ -397,20 +471,31 @@ const GameTab: React.FC<{
     return <QuizEngine quizId={activeQuiz} onBack={() => onSelectQuiz(null)} />;
   }
 
+  const quizIds = Object.keys(quizzes).sort((first, second) => {
+    const firstWeek = Number(first.replace('week', ''));
+    const secondWeek = Number(second.replace('week', ''));
+    return firstWeek - secondWeek;
+  });
+
   return (
     <div className="quiz-list fade-in">
       <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Chọn Bài Trắc Nghiệm</h2>
-      {chapters.map(chapter => (
-        <div key={chapter.id} className="quiz-item glass-card">
-          <div>
-            <h3>{chapter.title}</h3>
-            <p style={{ color: 'var(--text-secondary)' }}>{quizzes[chapter.id]?.length || 0} câu hỏi</p>
+      {quizIds.map(quizId => {
+        const chapter = chapters.find(item => item.id === quizId);
+        const weekNumber = Number(quizId.replace('week', ''));
+
+        return (
+          <div key={quizId} className="quiz-item glass-card">
+            <div>
+              <h3>{chapter?.title || `Tuần ${weekNumber}`}</h3>
+              <p style={{ color: 'var(--text-secondary)' }}>{quizzes[quizId].length} câu hỏi</p>
+            </div>
+            <button className="btn-read" onClick={() => onSelectQuiz(quizId)}>
+              <Play size={18} /> Bắt đầu
+            </button>
           </div>
-          <button className="btn-read" onClick={() => onSelectQuiz(chapter.id)}>
-            <Play size={18} /> Bắt đầu
-          </button>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
