@@ -757,10 +757,7 @@ h1, h2, h3 {
   font-weight: 750;
 }
 
-.result-message {
-  max-width: 660px;
-  margin: 1.2rem auto 0;
-  color: var(--text-secondary);
+.result-message { max-width: 660px; margin: 1.2rem auto 0; color: #8b1e2d;
   font-size: 0.98rem;
   line-height: 1.65;
 }
