@@ -115,8 +115,7 @@ h1, h2, h3 {
   }
 }
 
-.app-subtitle {
-  color: var(--text-secondary);
+.app-subtitle { color: #8b1e2d;
   font-size: 0.78rem;
   line-height: 1.3;
   display: flex;
@@ -733,14 +732,12 @@ h1, h2, h3 {
   background: var(--surface-muted);
 }
 
-.result-excellent .result-badge {
-  color: #7a4b08;
+.result-excellent .result-badge { color: #8b1e2d;
   background: #fff8d7;
   border-color: #e8ca68;
 }
 
-.result-review-needed .result-badge {
-  color: var(--primary-hover);
+.result-review-needed .result-badge { color: #8b1e2d;
   background: var(--primary-soft);
   border-color: var(--primary-border);
 }
