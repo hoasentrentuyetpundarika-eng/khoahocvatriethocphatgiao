@@ -196,7 +196,7 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
   const [answers, setAnswers] = useState<Record<number, number>>({});
   
   // Lifelines
-  const [used5050, setUsed5050] = useState(false);
+  const [used5050Questions, setUsed5050Questions] = useState<number[]>([]);
   const [hiddenOptions, setHiddenOptions] = useState<number[]>([]);
 
   useEffect(() => {
@@ -207,7 +207,7 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
     return <div>Quiz không tồn tại!</div>;
   }
 
-  const question = questions[currentIdx];
+  const question = questions[currentIdx]; const max5050Uses = Math.floor(questions.length / 2); const used5050OnCurrentQuestion = used5050Questions.includes(currentIdx);
 
   const handleOptionClick = (index: number) => {
     if (answered) return; // Prevent multiple clicks
@@ -239,8 +239,8 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
   };
 
   const handle5050 = () => {
-    if (used5050) return;
-    setUsed5050(true);
+    if (answered || used5050OnCurrentQuestion || used5050Questions.length >= max5050Uses) return;
+    setUsed5050Questions(previous => [...previous, currentIdx]);
     const incorrectIndices = question.options
       .map((_, i) => i)
       .filter(i => i !== question.correctAnswerIndex);
@@ -264,7 +264,7 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
     setShowConfetti(false);
     setShowReview(false);
     setAnswers({});
-    setUsed5050(false);
+    setUsed5050Questions([]);
     setHiddenOptions([]);
   };
 
@@ -292,8 +292,8 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
 
           <p className="result-message">
             {isExcellent
-              ? (<> <strong style={{ color: '#8b1e2d', fontWeight: 800 }}>Chúc mừng bạn!</strong>{' '} <span style={{ color: '#8a4b10', fontWeight: 600 }}>Hãy tiếp tục ôn tập và suy ngẫm để hiểu Pháp ngày càng sâu hơn.</span>{' '} <span style={{ color: '#7a1726', fontWeight: 650 }}>Mong nguyện những lời Pháp bạn đã được học sẽ thấm nhuần vào tâm</span>{' '} <span style={{ color: '#6b3a34' }}>để trong từng bước chân, từng hơi thở, từng cái nhìn, từng bữa ăn và bất kỳ hành động nào của mình, bạn đều cảm nhận được Pháp trong khung cảnh đó.</span> </>)
-              : (<> <strong style={{ color: '#8b1e2d', fontWeight: 800 }}>Nhiều câu hỏi cần sự suy ngẫm và tư duy.</strong>{' '} <span style={{ color: '#8a4b10', fontWeight: 600 }}>Bạn hãy tiếp tục ôn tập kỹ hơn, nghe lại bài giảng, đọc lại Tập 1 và tài liệu,</span>{' '} <span style={{ color: '#6b3a34' }}>xem phần giải thích những nội dung chưa rõ để hiểu Pháp ngày càng sâu hơn.</span> </>)}
+              ? (<> <strong style={{ color: '#8b1e2d', fontWeight: 800 }}>Chúc mừng bạn!</strong>{' '} <span style={{ color: '#8b1e2d', fontWeight: 600 }}>Hãy tiếp tục ôn tập và suy ngẫm để hiểu Pháp ngày càng sâu hơn.</span>{' '} <span style={{ color: '#8b1e2d', fontWeight: 650 }}>Mong nguyện những lời Pháp bạn đã được học sẽ thấm nhuần vào tâm</span>{' '} <span style={{ color: '#8b1e2d' }}>để trong từng bước chân, từng hơi thở, từng cái nhìn, từng bữa ăn và bất kỳ hành động nào của mình, bạn đều cảm nhận được Pháp trong khung cảnh đó.</span> </>)
+              : (<> <strong style={{ color: '#8b1e2d', fontWeight: 800 }}>Nhiều câu hỏi cần sự suy ngẫm và tư duy.</strong>{' '} <span style={{ color: '#8b1e2d', fontWeight: 600 }}>Bạn hãy tiếp tục ôn tập kỹ hơn, nghe lại bài giảng, đọc lại Tập 1 và tài liệu,</span>{' '} <span style={{ color: '#8b1e2d' }}>xem phần giải thích những nội dung chưa rõ để hiểu Pháp ngày càng sâu hơn.</span> </>)}
           </p>
 
           <div className="result-actions">
@@ -358,8 +358,8 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
         </div>
 
         <div className="lifelines">
-          <button className="lifeline-btn" onClick={handle5050} disabled={used5050}>
-            <SplitSquareVertical size={16} /> 50:50
+          <button className="lifeline-btn" onClick={handle5050} disabled={answered || used5050OnCurrentQuestion || used5050Questions.length >= max5050Uses}>
+            <SplitSquareVertical size={16} /> 50:50 ({used5050Questions.length}/{max5050Uses})
           </button>
           <button className="lifeline-btn" onClick={handleHint} disabled={showHint || answered}>
             <Lightbulb size={16} /> {showHint ? 'Đã xem gợi ý' : 'Gợi ý'}
