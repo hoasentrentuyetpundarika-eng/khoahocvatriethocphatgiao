@@ -292,8 +292,8 @@ const QuizEngine: React.FC<{ quizId: string; onBack: () => void }> = ({ quizId, 
 
           <p className="result-message">
             {isExcellent
-              ? 'Chúc mừng bạn! Hãy tiếp tục ôn tập và suy ngẫm để hiểu Pháp ngày càng sâu hơn. Mong nguyện những lời Pháp bạn đã được học sẽ thấm nhuần vào tâm để trong từng bước chân, từng hơi thở, từng cái nhìn, từng bữa ăn và bất kỳ hành động nào của mình, bạn đều cảm nhận được Pháp trong khung cảnh đó.'
-              : 'Nhiều câu hỏi cần sự suy ngẫm và tư duy. Bạn hãy tiếp tục ôn tập kỹ hơn, nghe lại bài giảng, đọc lại Tập 1 và tài liệu, xem phần giải thích những nội dung chưa rõ để hiểu Pháp ngày càng sâu hơn.'}
+              ? (<> <strong style={{ color: '#8b1e2d', fontWeight: 800 }}>Chúc mừng bạn!</strong>{' '} <span style={{ color: '#8a4b10', fontWeight: 600 }}>Hãy tiếp tục ôn tập và suy ngẫm để hiểu Pháp ngày càng sâu hơn.</span>{' '} <span style={{ color: '#7a1726', fontWeight: 650 }}>Mong nguyện những lời Pháp bạn đã được học sẽ thấm nhuần vào tâm</span>{' '} <span style={{ color: '#6b3a34' }}>để trong từng bước chân, từng hơi thở, từng cái nhìn, từng bữa ăn và bất kỳ hành động nào của mình, bạn đều cảm nhận được Pháp trong khung cảnh đó.</span> </>)
+              : (<> <strong style={{ color: '#8b1e2d', fontWeight: 800 }}>Nhiều câu hỏi cần sự suy ngẫm và tư duy.</strong>{' '} <span style={{ color: '#8a4b10', fontWeight: 600 }}>Bạn hãy tiếp tục ôn tập kỹ hơn, nghe lại bài giảng, đọc lại Tập 1 và tài liệu,</span>{' '} <span style={{ color: '#6b3a34' }}>xem phần giải thích những nội dung chưa rõ để hiểu Pháp ngày càng sâu hơn.</span> </>)}
           </p>
 
           <div className="result-actions">
