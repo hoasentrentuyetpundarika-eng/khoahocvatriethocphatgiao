@@ -118,5 +118,26 @@ export const chapters: Chapter[] = [
     date: "26.09.2026",
     summary: "Ý nghĩa thâm sâu của 'Một' và 'Khác' đối với việc thấu hiểu vô thường và tính không. Đối chiếu quan điểm Phật giáo và các bộ phái, phân tích các ví dụ bình vàng, chất thể và mầm hạt.",
     fileUrl: "/docs/week16.md"
+  },
+  {
+    id: "week17",
+    title: "Tuần 17: Một và Khác & Chung và Riêng",
+    date: "03.10.2026",
+    summary: "Phân tích ‘ngược với là’ và ‘ngược với không phải là’, quy tắc chẵn – lẻ, cách nhìn thuận chiều – nghịch chiều, cùng các khái niệm cái chung, cái riêng và quan hệ bao hàm.",
+    fileUrl: "/docs/week17.md"
+  },
+  {
+    id: "week18",
+    title: "Tuần 18: Chất Pháp và Phản Pháp",
+    date: "24.10.2026",
+    summary: "Khảo sát Chất pháp và Phản pháp, Hữu chất và Giả có; dùng phủ định để giới thiệu hư không và tính không; phân tích bốn đặc tính cùng các trường hợp dễ nhầm.",
+    fileUrl: "/docs/week18.md"
+  },
+  {
+    id: "week19",
+    title: "Tuần 19: Tương Nghịch và Tương Quan",
+    date: "07.11.2026",
+    summary: "Định nghĩa và phân loại tương nghịch: không cùng tồn tại, loại trừ lẫn nhau, trực tiếp và gián tiếp; vận dụng quan hệ đối trị trong tư duy và tu tập tâm thức.",
+    fileUrl: "/docs/week19.md"
   }
 ];
