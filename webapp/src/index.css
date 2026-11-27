@@ -285,7 +285,7 @@ h1, h2, h3 {
 }
 
 .doc-date {
-  color: #8b1e2d;
+  color: var(--primary);
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
