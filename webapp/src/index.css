@@ -294,7 +294,7 @@ h1, h2, h3 {
 
 .doc-title {
   font-size: 1.15rem;
-  color: var(--text-primary);
+  color: #8b1e2d;
   margin-bottom: 0.75rem;
 }
 
@@ -916,7 +916,7 @@ h1, h2, h3 {
 .quiz-item h3 {
   margin-bottom: 0.25rem;
   font-size: 1.05rem;
-  color: var(--text-primary);
+  color: #8b1e2d;
 }
 
 .fade-in {
