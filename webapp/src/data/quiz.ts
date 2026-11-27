@@ -8201,7 +8201,7 @@ export const quizzes: Record<string, QuizQuestion[]> = {
         "Không thể xác định cho đến khi người con tự lựa chọn dòng giống của mình."
       ],
       "correctAnswerIndex": 2,
-      "explanation": "Bài thừa nhận khoa học có thể xét DNA từ cả cha và mẹ, nhưng ví dụ đang theo cách tính dòng giống trong Lamrim Chenmo và truyền thống Ấn Độ: dòng giống và họ được tính theo người cha. Vì cha là người Việt nên người con được tính là người Việt.",
+      "explanation": "Nếu xét theo khoa học thì có thể liên quan đến DNA của cả cha và mẹ. Nhưng trong Lamrim Chenmo và truyền thống Ấn Độ: dòng giống và họ được tính theo người cha. Vì cha là người Việt nên người con được tính là người Việt.",
       "hint": "Phân biệt cách xét của khoa học về DNA với quy ước dòng giống đang được bài sử dụng.",
       "memory": "Trong ví dụ của bài, dòng giống của người con được tính theo người cha.",
       "difficulty": "Trung bình"
