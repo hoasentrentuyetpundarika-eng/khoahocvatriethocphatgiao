@@ -390,7 +390,7 @@ h1, h2, h3 {
 
 .md-viewer p {
   margin-bottom: 1.1rem;
-}
+}/* Màu phân cấp cho phần mở đầu của mỗi bài ghi chép */.md-viewer > p:nth-child(1) > strong,.md-viewer > p:nth-child(2) > strong {  color: var(--primary-hover);}.md-viewer > p:nth-child(3) > em,.md-viewer > p:nth-child(4) > em {  color: #8b1e2d;}
 
 .md-viewer ul, .md-viewer ol {
   margin-left: 1.25rem;
