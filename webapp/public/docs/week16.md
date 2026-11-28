@@ -2,7 +2,7 @@
 
 **TUẦN 16 – NGÀY 26.09.2026: MỘT VÀ KHÁC TRONG LÝ LUẬN HỌC**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
