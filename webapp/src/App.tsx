@@ -479,7 +479,9 @@ const GameTab: React.FC<{
 
   return (
     <div className="quiz-list fade-in">
-      <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>Chọn Bài Trắc Nghiệm</h2>
+      <h2 className="quiz-list-title" style={{ textAlign: 'center', marginBottom: '2rem' }}>
+        Chọn Bài Trắc Nghiệm
+      </h2>
       {quizIds.map(quizId => {
         const chapter = chapters.find(item => item.id === quizId);
         const weekNumber = Number(quizId.replace('week', ''));
