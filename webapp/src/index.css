@@ -893,6 +893,14 @@ h1, h2, h3 {
   margin: 0 auto;
 }
 
+.quiz-list-title {
+  color: var(--primary-hover);
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .quiz-item {
   display: flex;
   flex-direction: column;
