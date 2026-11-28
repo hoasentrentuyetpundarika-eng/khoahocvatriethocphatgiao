@@ -6,6 +6,8 @@
 
 *Bài ghi chép tóm tắt của học viên*
 
+📺 **Bài giảng YouTube:** [https://youtu.be/-8idIoqkr80?si=wLVqTGrfrgAqfD4P](https://youtu.be/-8idIoqkr80?si=wLVqTGrfrgAqfD4P)
+
 A.  **Sự cần thiết trong việc khảo sát ba loại sở lượng**
 
 Đối với các hiện tượng sự vật, có những phần chúng ta có thể tiếp cận trực tiếp, và có những phần ẩn tế mà chúng ta không thể tiếp cận trực tiếp. Đối với phần ẩn tế, chúng ta phải dùng qua suy luận. Trong khi tiếp cận các vấn đề, phương pháp suy luận cực kỳ quan trọng.
