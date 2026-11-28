@@ -2,7 +2,7 @@
 
 **TUẦN 14 – NGÀY 05.09.2026: QUY LUẬT NHÂN QUẢ & PHÁP VÔ VI**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
