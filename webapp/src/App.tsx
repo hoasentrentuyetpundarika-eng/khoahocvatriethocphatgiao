@@ -514,7 +514,7 @@ const App: React.FC = () => {
         <p className="app-subtitle">
           <span>Giảng Sư: Yangten Rinpoche</span>
           <span className="subtitle-divider">•</span>
-          <span>Việt dịch: Ni Sư Nhật Hạnh</span>
+          <span>Việt dịch: Sư Cô Nhật Hạnh</span>
         </p>
       </header>
 
