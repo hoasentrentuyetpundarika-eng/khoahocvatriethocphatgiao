@@ -2,7 +2,7 @@
 
 **TUẦN 11 – NGÀY 08.08.2026: NĂM LOẠI SẮC THUỘC PHÁP XỨ & NHÂN ĐẠI CHỦNG**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
