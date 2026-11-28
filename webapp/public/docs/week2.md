@@ -6,6 +6,8 @@
 
 *Bài ghi chép tóm tắt của học viên*
 
+📺 **Bài giảng YouTube:** [https://youtu.be/7JAvc74tioQ?si=icxEEMaC-CX9BteX](https://youtu.be/7JAvc74tioQ?si=icxEEMaC-CX9BteX)
+
 A.  ***Bốn cách giải thích về nền tảng hiện tượng sự vật***
 
 1.  *Giải thích nền tảng của hiện tượng sự vật thì chúng ta giải thích trên 3 lãnh vực: **Bất tương ưng hành pháp, Tâm thức và Sắc pháp:***
