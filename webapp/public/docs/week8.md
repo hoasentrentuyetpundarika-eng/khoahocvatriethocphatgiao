@@ -2,7 +2,7 @@
 
 **TUẦN 8 – NGÀY 18.07.2026: GIẢI THÍCH NĂM LOẠI ĐỐI TƯỢNG: SẮC, THANH, HƯƠNG, VỊ, XÚC**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
