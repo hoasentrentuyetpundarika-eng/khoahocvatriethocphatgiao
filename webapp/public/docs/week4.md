@@ -2,7 +2,7 @@
 
 **TUẦN 4 – NGÀY 13.06.2026: LOGIC TRONG NHIẾP LOẠI HỌC**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
