@@ -2,7 +2,7 @@
 
 **TUẦN 10 – NGÀY 01.08.2026: XÚC XỨ, NĂM CĂN & SẮC THUỘC PHÁP XỨ**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
