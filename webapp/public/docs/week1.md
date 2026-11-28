@@ -6,6 +6,8 @@
 
 *Bài ghi chép tóm tắt của học viên*
 
+📺 **Bài giảng YouTube:** [https://youtu.be/iwjl5iolirM?si=BbhxzRp7uAVyzz3D](https://youtu.be/iwjl5iolirM?si=BbhxzRp7uAVyzz3D)
+
 A.  **Nhân duyên hình thành khóa học và Triết học Phật giáo Tổng tập và tầm quan trọng của sự cam kết và nỗ lực trong học tập**
 
 -   **Giới thiệu bộ sách:** Khóa học tập trung nghiên cứu bộ "Khoa học và Triết học Phật giáo Tổng tập" gồm 4 tập. Trong đó, tập 1 và tập 2 nói về Khoa học Phật giáo (bao gồm thế giới vật chất và tâm thức) còn tập 3 và tập 4 nói về triết học Phật giáo.
