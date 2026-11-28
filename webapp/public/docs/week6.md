@@ -2,7 +2,7 @@
 
 **TUẦN 6 – NGÀY 28.06.2026: HỆ THỐNG PHÂN LOẠI ĐỐI TƯỢNG NHẬN THỨC**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
