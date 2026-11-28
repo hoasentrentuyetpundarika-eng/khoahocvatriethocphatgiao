@@ -2,7 +2,7 @@
 
 **TUẦN 3 – NGÀY 06.06.2026: THẾ GIỚI VẬT CHẤT (Phần 1)**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép tóm tắt của học viên*
 
