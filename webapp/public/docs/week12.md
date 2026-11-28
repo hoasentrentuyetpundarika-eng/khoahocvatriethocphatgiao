@@ -2,7 +2,7 @@
 
 **TUẦN 12 – NGÀY 22.08.2026: BỐN ĐẠI CHỦNG (ĐẤT, NƯỚC, LỬA, GIÓ)**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
