@@ -2,7 +2,7 @@
 
 **TUẦN 19 – NGÀY 07.11.2026: TƯƠNG NGHỊCH VÀ TƯƠNG QUAN**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
