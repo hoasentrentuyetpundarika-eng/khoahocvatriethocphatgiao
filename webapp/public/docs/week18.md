@@ -2,7 +2,7 @@
 
 **TUẦN 18 – NGÀY 24.10.2026: CHẤT PHÁP VÀ PHẢN PHÁP**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
