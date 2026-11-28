@@ -2,7 +2,7 @@
 
 **TUẦN 9 – NGÀY 25.07.2026: CHI TIẾT SẮC XỨ, THANH XỨ & ĐỐI CHIẾU KHOA HỌC**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
