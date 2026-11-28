@@ -2,7 +2,7 @@
 
 **TUẦN 17 – NGÀY 03.10.2026: MỘT VÀ KHÁC & CHUNG VÀ RIÊNG**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
