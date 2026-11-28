@@ -2,7 +2,7 @@
 
 **TUẦN 13 – NGÀY 29.08.2026: PHÁP BẤT TƯƠNG ƯNG HÀNH**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
