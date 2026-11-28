@@ -2,7 +2,7 @@
 
 **TUẦN 5 – NGÀY 21.06.2026: ĐỐI TƯỢNG ĐƯỢC NHẬN THỨC & TIÊU CHUẨN TỒN TẠI**
 
-*(Giảng Sư: Yangten Rinpoche - Việt dịch: Ni Sư Nhật Hạnh)*
+*(Giảng Sư: Yangten Rinpoche - Việt dịch: Sư Cô Nhật Hạnh)*
 
 *Bài ghi chép của học viên*
 
